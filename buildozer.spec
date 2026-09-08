@@ -4,7 +4,7 @@
 # See the end of the file for more details and warnings about common mistakes.
 
 [app]
-requirements = python3,kivy,chess
+requirements = python3,kivy,python-chess
 
 # (str) Title of your application
 title = My Application
@@ -291,7 +291,7 @@ android.accept_sdk_license = True
 
 # (list) The Android archs to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 # In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.
-android.archs = arm64-v8a, armeabi-v7a
+android.archs = arm64-v8a
 
 # (int) overrides automatic versionCode computation (used in build.gradle)
 # this is not the same as app version and should only be edited if you know what you're doing
