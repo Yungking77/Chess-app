@@ -5,7 +5,7 @@ package.domain = org.yungking
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
-requirements = python3,kivy==2.3.0,python-chess
+requirements = python3,kivy,python-chess
 orientation = portrait
 fullscreen = 1
 android.api = 33
