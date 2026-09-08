@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout Code
@@ -24,7 +24,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends \
             build-essential git openjdk-17-jdk zip unzip autoconf \
             libtool pkg-config zlib1g-dev libffi-dev libssl-dev \
-            libncurses-dev cmake ninja-build ccache lld
+            libncurses5-dev libncursesw5-dev libtinfo5 cmake ninja-build ccache
 
       - name: Install Python Dependencies
         run: |
@@ -33,9 +33,10 @@ jobs:
 
       - name: Build APK with Buildozer
         env:
+          JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
           APP_ANDROID_ACCEPT_SDK_LICENSES: "1"
         run: |
-          buildozer -v android debug
+          yes | buildozer -v android debug
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
