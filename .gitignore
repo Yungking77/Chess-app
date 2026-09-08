@@ -1,0 +1,5 @@
+.buildozer/
+bin/
+*.zip
+*.pyc
+__pycache__/
